@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef KE_PLATFORM_WINDOWS 
-	#ifdef KINGO_BUILD_DLL
+	#ifdef KE_BUILD_DLL
 		#define KINGO_API __declspec(dllexport)
 	#else
 		#define KINGO_API __declspec(dllimport)
