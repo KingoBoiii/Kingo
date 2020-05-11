@@ -1,8 +1,6 @@
 #pragma once
+#include "kepch.h"
 #include "Kingo/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Kingo {
 

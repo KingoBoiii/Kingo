@@ -1,3 +1,4 @@
+#include "kepch.h"
 #include "Application.h"
 
 #include "Kingo/Events/ApplicationEvent.h"

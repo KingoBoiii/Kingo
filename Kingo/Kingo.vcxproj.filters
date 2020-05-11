@@ -34,6 +34,7 @@
     <ClInclude Include="Sources\Kingo\Log.h">
       <Filter>Kingo</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\kepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="Sources\Kingo\Log.cpp">
       <Filter>Kingo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\kepch.cpp" />
   </ItemGroup>
 </Project>

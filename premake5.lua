@@ -17,6 +17,9 @@ project "Kingo"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "kepch.h"
+    pchsource "Kingo/Sources/kepch.cpp"
+
     files {
         "%{prj.name}/Sources/**.h",
         "%{prj.name}/Sources/**.cpp"
