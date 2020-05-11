@@ -9,6 +9,11 @@ workspace "Kingo"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Kingo/Vendor/GLFW/include"
+
+include "Kingo/Vendor/GLFW"
+
 project "Kingo"
     location "Kingo"
     kind "SharedLib"
@@ -26,8 +31,14 @@ project "Kingo"
     }
 
     includedirs {
+        "%{prj.name}/Sources",
         "%{prj.name}/Vendor/spdlog/include",
-        "%{prj.name}/Sources"
+        "%{IncludeDir.GLFW}"
+    }
+
+    links {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

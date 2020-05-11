@@ -1,3 +1,6 @@
 [submodule "Kingo/Vendor/spdlog"]
 	path = Kingo/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Kingo/Vendor/GLFW"]
+	path = Kingo/Vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
