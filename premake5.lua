@@ -23,7 +23,8 @@ project "Kingo"
     }
 
     includedirs {
-        "%{prj.name}/Vendor/spdlog/include"
+        "%{prj.name}/Vendor/spdlog/include",
+        "%{prj.name}/Sources"
     }
 
     filter "system:windows"

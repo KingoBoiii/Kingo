@@ -4,6 +4,9 @@
     <Filter Include="Kingo">
       <UniqueIdentifier>{5DA3870D-C9B7-AFBE-9239-531EFE0CACEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kingo\Events">
+      <UniqueIdentifier>{A1449239-8DA7-21DE-362D-5A94226FED60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Kingo.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="Sources\Kingo\EntryPoint.h">
       <Filter>Kingo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Events\ApplicationEvent.h">
+      <Filter>Kingo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Events\Event.h">
+      <Filter>Kingo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Events\KeyEvent.h">
+      <Filter>Kingo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Events\MouseEvent.h">
+      <Filter>Kingo\Events</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Log.h">
       <Filter>Kingo</Filter>
