@@ -2,9 +2,10 @@
 
 // For use by Kingo Applications
 
-#include "Kingo/Log.h"
 #include "Kingo/Application.h"
-#include "Kingo/Events/Event.h"
+#include "Kingo/Layer.h"
+#include "Kingo/Log.h"
+#include "Kingo/ImGui/ImGuiLayer.h"
 
 // --- Entry Point ---------------------
 #include "Kingo/EntryPoint.h"

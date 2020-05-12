@@ -4,3 +4,6 @@
 [submodule "Kingo/Vendor/GLFW"]
 	path = Kingo/Vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Kingo/Vendor/imgui"]
+	path = Kingo/Vendor/imgui
+	url = https://github.com/TheCherno/imgui

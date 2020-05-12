@@ -7,6 +7,18 @@
     <Filter Include="Kingo\Events">
       <UniqueIdentifier>{A1449239-8DA7-21DE-362D-5A94226FED60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kingo\ImGui">
+      <UniqueIdentifier>{476A6695-B31F-DF8A-3C14-D961A8C8D58E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Kingo.h" />
@@ -31,21 +43,51 @@
     <ClInclude Include="Sources\Kingo\Events\MouseEvent.h">
       <Filter>Kingo\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Kingo\ImGui\ImGuiLayer.h">
+      <Filter>Kingo\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Layer.h">
+      <Filter>Kingo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\LayerStack.h">
+      <Filter>Kingo</Filter>
+    </ClInclude>
     <ClInclude Include="Sources\Kingo\Log.h">
       <Filter>Kingo</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Kingo\Window.h">
+      <Filter>Kingo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="Sources\kepch.h" />
-    <ClInclude Include="Sources\Kingo\Window.h" />
-    <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
       <Filter>Kingo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp">
+      <Filter>Kingo\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Layer.cpp">
+      <Filter>Kingo</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\LayerStack.cpp">
+      <Filter>Kingo</Filter>
+    </ClCompile>
     <ClCompile Include="Sources\Kingo\Log.cpp">
       <Filter>Kingo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="Sources\kepch.cpp" />
-    <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

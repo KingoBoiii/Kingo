@@ -79,11 +79,12 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;KE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -101,14 +102,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;KE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -127,14 +129,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;KE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -157,22 +160,36 @@
     <ClInclude Include="Sources\Kingo\Events\Event.h" />
     <ClInclude Include="Sources\Kingo\Events\KeyEvent.h" />
     <ClInclude Include="Sources\Kingo\Events\MouseEvent.h" />
+    <ClInclude Include="Sources\Kingo\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="Sources\Kingo\Layer.h" />
+    <ClInclude Include="Sources\Kingo\LayerStack.h" />
     <ClInclude Include="Sources\Kingo\Log.h" />
-    <ClInclude Include="Sources\kepch.h" />
     <ClInclude Include="Sources\Kingo\Window.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Sources\kepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp" />
+    <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="Sources\Kingo\Layer.cpp" />
+    <ClCompile Include="Sources\Kingo\LayerStack.cpp" />
     <ClCompile Include="Sources\Kingo\Log.cpp" />
+    <ClCompile Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Sources\kepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Vendor\GLAD\GLAD.vcxproj">
+      <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
