@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Kingo/Vendor/GLFW/include"
 IncludeDir["GLAD"] = "Kingo/Vendor/GLAD/include"
 IncludeDir["imgui"] = "Kingo/Vendor/imgui"
+IncludeDir["glm"] = "Kingo/Vendor/glm"
 
 include "Kingo/Vendor/GLFW"
 include "Kingo/Vendor/GLAD"
@@ -33,7 +34,9 @@ project "Kingo"
 
     files {
         "%{prj.name}/Sources/**.h",
-        "%{prj.name}/Sources/**.cpp"
+        "%{prj.name}/Sources/**.cpp",
+        "%{prj.name}/Vendor/glm/glm/**.hpp",
+        "%{prj.name}/Vendor/glm/glm/**.inl"
     }
 
     includedirs {
@@ -41,7 +44,8 @@ project "Kingo"
         "%{prj.name}/Vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
-        "%{IncludeDir.imgui}"
+        "%{IncludeDir.imgui}",
+        "%{IncludeDir.glm}"
     }
 
     links {
@@ -96,7 +100,8 @@ project "Sandbox"
 
     includedirs {
         "Kingo/Vendor/spdlog/include",
-        "Kingo/Sources"
+        "Kingo/Sources",
+        "%{IncludeDir.glm}"
     }
 
     links {

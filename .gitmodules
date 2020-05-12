@@ -7,3 +7,6 @@
 [submodule "Kingo/Vendor/imgui"]
 	path = Kingo/Vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Kingo/Vendor/glm"]
+	path = Kingo/Vendor/glm
+	url = https://github.com/g-truc/glm
