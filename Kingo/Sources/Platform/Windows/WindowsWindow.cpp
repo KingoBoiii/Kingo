@@ -81,6 +81,12 @@ namespace Kingo {
 			}
 		});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* win, unsigned int keycode) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(win);
+			KeyTypedEvent event(keycode);
+			data.EventCallback(event);
+		});
+
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* win, int button, int action, int mods) {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(win);
 			switch (action) {
