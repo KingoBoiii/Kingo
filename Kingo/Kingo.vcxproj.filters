@@ -65,6 +65,10 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Sources\kepch.h" />
+    <ClInclude Include="Sources\Kingo\Input.h" />
+    <ClInclude Include="Sources\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="Sources\Kingo\KeyCodes.h" />
+    <ClInclude Include="Sources\Kingo\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -89,5 +93,6 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Sources\kepch.cpp" />
+    <ClCompile Include="Sources\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

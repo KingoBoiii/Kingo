@@ -8,11 +8,19 @@ public:
 	}
 
 	void OnUpdate() override {
-		KE_INFO("ExampleLayer::Update");
+		if (Kingo::Input::IsKeyPressed(KE_KEY_TAB)) {
+			KE_INFO("Tab key is pressed! (Poll)");
+		}
 	}
 
 	void OnEvent(Kingo::Event& e) override {
-		KE_TRACE("{0}", e);
+		if (e.GetEventType() == Kingo::EventType::KeyPressed) {
+			Kingo::KeyPressedEvent& kpe = (Kingo::KeyPressedEvent&)e;
+			if (kpe.GetKeyCode() == KE_KEY_TAB) {
+				KE_INFO("Tab key is pressed! (Event)");
+			}
+			KE_INFO("{0}", (char)kpe.GetKeyCode());
+		}
 	}
 };
 

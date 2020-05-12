@@ -83,8 +83,7 @@
       <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -94,7 +93,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Kingo\Kingo.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll "..\bin\Debug-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Kingo\Kingo.dll "..\bin\Debug-windows-x86_64\Sandbox" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -109,8 +108,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -121,7 +119,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Kingo\Kingo.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Kingo\Kingo.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Kingo\Kingo.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Kingo\Kingo.dll "..\bin\Release-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Kingo\Kingo.dll "..\bin\Release-windows-x86_64\Sandbox" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -136,8 +134,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -148,7 +145,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Kingo\Kingo.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll "..\bin\Dist-windows-x86_64\Sandbox" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Kingo\Kingo.dll "..\bin\Dist-windows-x86_64\Sandbox" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -161,11 +158,15 @@
     <ClInclude Include="Sources\Kingo\Events\KeyEvent.h" />
     <ClInclude Include="Sources\Kingo\Events\MouseEvent.h" />
     <ClInclude Include="Sources\Kingo\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="Sources\Kingo\Input.h" />
+    <ClInclude Include="Sources\Kingo\KeyCodes.h" />
     <ClInclude Include="Sources\Kingo\Layer.h" />
     <ClInclude Include="Sources\Kingo\LayerStack.h" />
     <ClInclude Include="Sources\Kingo\Log.h" />
+    <ClInclude Include="Sources\Kingo\MouseButtonCodes.h" />
     <ClInclude Include="Sources\Kingo\Window.h" />
     <ClInclude Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="Sources\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="Sources\kepch.h" />
   </ItemGroup>
@@ -176,6 +177,7 @@
     <ClCompile Include="Sources\Kingo\LayerStack.cpp" />
     <ClCompile Include="Sources\Kingo\Log.cpp" />
     <ClCompile Include="Sources\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="Sources\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Sources\kepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
