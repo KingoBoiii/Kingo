@@ -40,6 +40,10 @@ project "Kingo"
         "%{prj.name}/Vendor/glm/glm/**.inl"
     }
 
+    defines {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
+
     includedirs {
         "%{prj.name}/Sources",
         "%{prj.name}/Vendor/spdlog/include",

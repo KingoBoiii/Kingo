@@ -76,7 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\ImGui;Vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -96,7 +96,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\ImGui;Vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -120,7 +120,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>kepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;KE_PLATFORM_WINDOWS;KE_BUILD_DLL;GLFW_INCLUDE_NONE;KE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Sources;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\GLAD\include;Vendor\ImGui;Vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -155,7 +155,9 @@
     <ClInclude Include="Sources\Kingo\LayerStack.h" />
     <ClInclude Include="Sources\Kingo\Log.h" />
     <ClInclude Include="Sources\Kingo\MouseButtonCodes.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
     <ClInclude Include="Sources\Kingo\Window.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="Sources\kepch.h" />
@@ -575,6 +577,7 @@
     <ClCompile Include="Sources\Kingo\Layer.cpp" />
     <ClCompile Include="Sources\Kingo\LayerStack.cpp" />
     <ClCompile Include="Sources\Kingo\Log.cpp" />
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="Sources\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Sources\kepch.cpp">

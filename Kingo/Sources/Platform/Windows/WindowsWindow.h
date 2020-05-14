@@ -1,10 +1,9 @@
 #pragma once
 
 #include "Kingo/Window.h"
+#include "Kingo/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
-
-// struct GLFWwindow;
 
 namespace Kingo {
 
@@ -29,6 +28,7 @@ namespace Kingo {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;

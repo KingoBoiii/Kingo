@@ -1323,6 +1323,8 @@
     <ClInclude Include="Vendor\glm\glm\vector_relational.hpp">
       <Filter>Vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -1352,5 +1354,6 @@
     <ClCompile Include="Sources\kepch.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>
