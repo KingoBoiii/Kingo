@@ -1326,6 +1326,11 @@
     <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\Renderer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -1357,5 +1362,10 @@
     </ClCompile>
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp" />
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\VertexArray.cpp" />
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLVertexArray.cpp" />
   </ItemGroup>
 </Project>

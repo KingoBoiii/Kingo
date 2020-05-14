@@ -9,6 +9,8 @@
 #include "Kingo/ImGui/ImGuiLayer.h"
 
 #include "Kingo/Renderer/Shader.h"
+#include "Kingo/Renderer/Buffer.h"
+#include "Kingo/Renderer/VertexArray.h"
 
 namespace Kingo {
 
@@ -34,8 +36,11 @@ namespace Kingo {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
-		std::unique_ptr<Shader> m_Shader;
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<VertexArray> m_SquareVA;
+		std::shared_ptr<Shader> m_BlueShader;
 	private:
 		static Application* s_Instance;
 	};
