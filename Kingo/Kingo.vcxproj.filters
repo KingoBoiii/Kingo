@@ -1325,6 +1325,7 @@
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -1355,5 +1356,6 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>

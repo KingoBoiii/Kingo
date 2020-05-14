@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
     <ClInclude Include="Sources\Kingo.h" />
     <ClInclude Include="Sources\Kingo\Application.h" />
     <ClInclude Include="Sources\Kingo\Core.h" />
@@ -571,6 +572,7 @@
     <ClInclude Include="Vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
     <ClCompile Include="Sources\Kingo\Application.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp" />
