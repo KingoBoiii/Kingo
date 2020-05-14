@@ -13,18 +13,19 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Kingo/Vendor/GLFW/include"
 IncludeDir["GLAD"] = "Kingo/Vendor/GLAD/include"
-IncludeDir["imgui"] = "Kingo/Vendor/imgui"
+--IncludeDir["imgui"] = "Kingo/Vendor/imgui"
 IncludeDir["glm"] = "Kingo/Vendor/glm"
 
 include "Kingo/Vendor/GLFW"
 include "Kingo/Vendor/GLAD"
-include "Kingo/Vendor/imgui"
+--include "Kingo/Vendor/imgui"
 
 project "Kingo"
     location "Kingo"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
-    staticruntime "Off"
+    cppdialect "C++17"
+    staticruntime "On"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -44,29 +45,24 @@ project "Kingo"
         "%{prj.name}/Vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
-        "%{IncludeDir.imgui}",
+        --"%{IncludeDir.imgui}",
         "%{IncludeDir.glm}"
     }
 
     links {
         "GLFW",
         "GLAD",
-        "imgui",
+        --"imgui",
         "opengl32.lib"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
         systemversion "latest"
 
         defines {
             "KE_PLATFORM_WINDOWS",
             "KE_BUILD_DLL",
             "GLFW_INCLUDE_NONE"
-        }
-
-        postbuildcommands {
-            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox\"")
         }
     
     filter "configurations:Debug"
@@ -88,7 +84,8 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
-    staticruntime "Off"
+    cppdialect "C++17"
+    staticruntime "On"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -101,6 +98,7 @@ project "Sandbox"
     includedirs {
         "Kingo/Vendor/spdlog/include",
         "Kingo/Sources",
+        "Kingo/Vendor",
         "%{IncludeDir.glm}"
     }
 
@@ -109,7 +107,6 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
         systemversion "latest"
 
         defines {

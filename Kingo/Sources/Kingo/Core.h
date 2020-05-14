@@ -1,6 +1,7 @@
 #pragma once
 
 #ifdef KE_PLATFORM_WINDOWS 
+#if KE_DYNAMIC_LINK
 	#ifdef KE_BUILD_DLL
 		#define KINGO_API __declspec(dllexport)
 	#else
@@ -8,6 +9,8 @@
 	#endif
 #else
 	#define KINGO_API
+#endif
+#else
 	#error Kingo only supports Windows!
 #endif
 

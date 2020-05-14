@@ -2,6 +2,8 @@
 
 // For use by Kingo Applications
 
+#include "Kingo/Core.h"
+
 #include "Kingo/Application.h"
 #include "Kingo/Layer.h"
 #include "Kingo/Log.h"

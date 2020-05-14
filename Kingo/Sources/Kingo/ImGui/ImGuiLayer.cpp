@@ -14,7 +14,6 @@
 namespace Kingo {
 
 	ImGuiLayer::ImGuiLayer() : Layer("ImGuiLayer") { }
-	ImGuiLayer::~ImGuiLayer() { }
 
 	void ImGuiLayer::OnAttach()	{
 		// Setup Dear ImGui context
@@ -57,13 +56,13 @@ namespace Kingo {
 		ImGui::ShowDemoWindow(new bool{ true });
 	}
 
-	void ImGuiLayer::Begin()	{
+	void ImGuiLayer::Begin() {
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 	}
 
-	void ImGuiLayer::End()	{
+	void ImGuiLayer::End() {
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

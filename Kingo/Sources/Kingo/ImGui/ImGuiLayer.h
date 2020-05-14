@@ -10,7 +10,7 @@ namespace Kingo {
 	class KINGO_API ImGuiLayer : public Layer {
 	public:
 		ImGuiLayer();
-		virtual ~ImGuiLayer();
+		~ImGuiLayer() = default;
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
