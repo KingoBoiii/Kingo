@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Renderer.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h" />
@@ -581,6 +582,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp" />

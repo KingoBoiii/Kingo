@@ -12,6 +12,8 @@
 #include "Kingo/Renderer/Buffer.h"
 #include "Kingo/Renderer/VertexArray.h"
 
+#include "Kingo/Renderer/OrthographicCamera.h"
+
 namespace Kingo {
 
 	class KINGO_API Application {
@@ -41,6 +43,8 @@ namespace Kingo {
 
 		std::shared_ptr<VertexArray> m_SquareVA;
 		std::shared_ptr<Shader> m_BlueShader;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
