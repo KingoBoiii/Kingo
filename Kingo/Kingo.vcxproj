@@ -141,7 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Renderer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
     <ClInclude Include="Sources\Kingo.h" />
     <ClInclude Include="Sources\Kingo\Application.h" />
@@ -163,6 +165,7 @@
     <ClInclude Include="Sources\Kingo\Window.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="Sources\Platform\Windows\WindowsWindow.h" />
@@ -578,7 +581,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
     <ClCompile Include="Sources\Kingo\Application.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiBuild.cpp" />
@@ -589,6 +594,7 @@
     <ClCompile Include="Sources\Kingo\Renderer\VertexArray.cpp" />
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="Sources\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="Sources\Platform\Windows\WindowsWindow.cpp" />
