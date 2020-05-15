@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Kingo\Core\Timestep.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
     <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />

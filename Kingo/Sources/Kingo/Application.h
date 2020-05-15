@@ -6,17 +6,13 @@
 #include "Kingo/Events/Event.h"
 #include "Kingo/Events/ApplicationEvent.h"
 
+#include "Kingo/Core/Timestep.h"
+
 #include "Kingo/ImGui/ImGuiLayer.h"
-
-#include "Kingo/Renderer/Shader.h"
-#include "Kingo/Renderer/Buffer.h"
-#include "Kingo/Renderer/VertexArray.h"
-
-#include "Kingo/Renderer/OrthographicCamera.h"
 
 namespace Kingo {
 
-	class KINGO_API Application {
+	class Application {
 	public:
 		Application();
 		virtual ~Application();
@@ -38,13 +34,7 @@ namespace Kingo {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<VertexArray> m_SquareVA;
-		std::shared_ptr<Shader> m_BlueShader;
-
-		OrthographicCamera m_Camera;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

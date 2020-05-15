@@ -1,5 +1,6 @@
 #pragma once
 #include "Kingo/Core.h"
+#include "Kingo/Core/Timestep.h"
 #include "Kingo/Events/Event.h"
 
 namespace Kingo {
@@ -11,7 +12,7 @@ namespace Kingo {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& e) {}
 

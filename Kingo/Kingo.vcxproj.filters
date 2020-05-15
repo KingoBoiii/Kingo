@@ -1335,6 +1335,7 @@
     <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="Sources\Kingo\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
