@@ -15,6 +15,7 @@ IncludeDir["GLFW"] = "Kingo/Vendor/GLFW/include"
 IncludeDir["GLAD"] = "Kingo/Vendor/GLAD/include"
 IncludeDir["ImGui"] = "Kingo/Vendor/ImGui"
 IncludeDir["glm"] = "Kingo/Vendor/glm"
+IncludeDir["stb_image"] = "Kingo/Vendor/stb_image"
 
 include "Kingo/Vendor/GLFW"
 include "Kingo/Vendor/GLAD"
@@ -36,6 +37,8 @@ project "Kingo"
     files {
         "%{prj.name}/Sources/**.h",
         "%{prj.name}/Sources/**.cpp",
+        "%{prj.name}/Vendor/stb_image/**.h",
+        "%{prj.name}/Vendor/stb_image/**.cpp",
         "%{prj.name}/Vendor/glm/glm/**.hpp",
         "%{prj.name}/Vendor/glm/glm/**.inl"
     }
@@ -50,7 +53,8 @@ project "Kingo"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLAD}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.stb_image}"
     }
 
     links {

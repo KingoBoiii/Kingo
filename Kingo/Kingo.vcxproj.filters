@@ -7,14 +7,23 @@
     <Filter Include="Sources\Kingo">
       <UniqueIdentifier>{1072116C-7C32-8DA2-456D-D61FB1ECD17E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Kingo\Core">
+      <UniqueIdentifier>{686094B3-5444-5509-BDA4-4F5CA9A73F8B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Sources\Kingo\Events">
       <UniqueIdentifier>{F42B50EF-E0BA-D9B8-89D9-EDB37547EA5E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Sources\Kingo\ImGui">
       <UniqueIdentifier>{3A338B26-A694-6834-2F02-AFE69B629FF3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Kingo\Renderer">
+      <UniqueIdentifier>{B60706FB-A201-2F4D-8B6E-C55D770795B9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Sources\Platform">
       <UniqueIdentifier>{FDFCC9E3-E9F5-E835-1228-CEBAFE7FC841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Platform\OpenGL">
+      <UniqueIdentifier>{9187A2D4-FDBE-EA6B-06C9-4E8F727F1165}</UniqueIdentifier>
     </Filter>
     <Filter Include="Sources\Platform\Windows">
       <UniqueIdentifier>{37540FC1-2379-5E41-4CC4-43D138485D5F}</UniqueIdentifier>
@@ -40,6 +49,9 @@
     <Filter Include="Vendor\glm\glm\gtx">
       <UniqueIdentifier>{9362E3A8-7F46-A4FE-E8A6-9E51D4A98E80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Vendor\stb_image">
+      <UniqueIdentifier>{EDE315D3-D9DC-3425-020F-1AAAEE661431}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Kingo.h">
@@ -50,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Core.h">
       <Filter>Sources\Kingo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\Timestep.h">
+      <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\EntryPoint.h">
       <Filter>Sources\Kingo</Filter>
@@ -87,8 +102,53 @@
     <ClInclude Include="Sources\Kingo\MouseButtonCodes.h">
       <Filter>Sources\Kingo</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\Buffer.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\Renderer.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\Shader.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\Texture.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="Sources\Kingo\Window.h">
       <Filter>Sources\Kingo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLShader.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>Sources\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Platform\Windows\WindowsInput.h">
       <Filter>Sources\Platform\Windows</Filter>
@@ -1323,19 +1383,9 @@
     <ClInclude Include="Vendor\glm\glm\vector_relational.hpp">
       <Filter>Vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
-    <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
-    <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\Renderer.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h" />
-    <ClInclude Include="Sources\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />
-    <ClInclude Include="Sources\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h" />
-    <ClInclude Include="Sources\Kingo\Core\Timestep.h" />
+    <ClInclude Include="Vendor\stb_image\stb_image.h">
+      <Filter>Vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Application.cpp">
@@ -1356,6 +1406,48 @@
     <ClCompile Include="Sources\Kingo\Log.cpp">
       <Filter>Sources\Kingo</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\OrthographicCamera.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\Texture.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\VertexArray.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>Sources\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="Sources\Platform\Windows\WindowsInput.cpp">
       <Filter>Sources\Platform\Windows</Filter>
     </ClCompile>
@@ -1365,16 +1457,8 @@
     <ClCompile Include="Sources\kepch.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp" />
-    <ClCompile Include="Sources\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\VertexArray.cpp" />
-    <ClCompile Include="Sources\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="Sources\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="Sources\Kingo\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="Vendor\stb_image\stb_image.cpp">
+      <Filter>Vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

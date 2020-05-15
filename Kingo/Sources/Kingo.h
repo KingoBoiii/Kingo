@@ -22,6 +22,7 @@
 
 #include "Kingo/Renderer/Buffer.h"
 #include "Kingo/Renderer/Shader.h"
+#include "Kingo/Renderer/Texture.h"
 #include "Kingo/Renderer/VertexArray.h"
 
 #include "Kingo/Renderer/OrthographicCamera.h"
