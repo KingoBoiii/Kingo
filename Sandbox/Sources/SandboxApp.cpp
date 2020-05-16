@@ -5,7 +5,6 @@
 #include "Platform/OpenGL/OpenGLShader.h"
 #include <glm/gtc/type_ptr.hpp>
 
-
 class ExampleLayer : public Kingo::Layer {
 public:
 	ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f) {
@@ -86,7 +85,7 @@ void main() {
 }
 		)";
 
-		m_Shader.reset(Kingo::Shader::Create(vertexSrc, fragmentSrc));
+		m_TriangleShader = Kingo::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		// ---------------------------------------------------------------------------------------------------------------
 		// Flat Color Shader
@@ -120,16 +119,17 @@ void main() {
 }
 		)";
 
-		m_FlatColorShader.reset(Kingo::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Kingo::Shader::Create("FlatColor", vertexSrc, fragmentSrc);
 
-		m_TextureShader.reset(Kingo::Shader::Create("Assets/Shaders/Texture.glsl"));
+
+		auto textureShader = m_ShaderLibrary.Load("Assets/Shaders/Texture.glsl");
 
 		m_KingoLogoTexture = Kingo::Texture2D::Create("Assets/Textures/KingoLogo.png");
 
 		m_Texture = Kingo::Texture2D::Create("Assets/Textures/Checkerboard.png");
 
-		std::dynamic_pointer_cast<Kingo::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Kingo::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Kingo::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Kingo::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Kingo::Timestep ts) override {
@@ -175,14 +175,16 @@ void main() {
 				}
 			}
 
+			auto textureShader = m_ShaderLibrary.Get("Texture");
+
 			m_Texture->Bind();
-			Kingo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+			Kingo::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 			m_KingoLogoTexture->Bind();
-			Kingo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+			Kingo::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 			// Triangle
-			// Kingo::Renderer::Submit(m_Shader, m_VertexArray);
+			// Kingo::Renderer::Submit(m_TriangleShader, m_VertexArray);
 		}
 		Kingo::Renderer::EndScene();
 	}
@@ -196,10 +198,12 @@ void main() {
 	void OnEvent(Kingo::Event& e) override {
 	}
 private:
-	Kingo::Ref<Kingo::Shader> m_Shader;
+	Kingo::ShaderLibrary m_ShaderLibrary;
+
+	Kingo::Ref<Kingo::Shader> m_TriangleShader;
 	Kingo::Ref<Kingo::VertexArray> m_VertexArray;
 
-	Kingo::Ref<Kingo::Shader> m_FlatColorShader, m_TextureShader;
+	Kingo::Ref<Kingo::Shader> m_FlatColorShader;
 	Kingo::Ref<Kingo::VertexArray> m_SquareVA;
 
 	Kingo::Ref<Kingo::Texture2D> m_Texture, m_KingoLogoTexture;
