@@ -7,7 +7,7 @@
 
 class ExampleLayer : public Kingo::Layer {
 public:
-	ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f) {
+	ExampleLayer() : Layer("Example"), m_CameraController(1280.0f / 720.0f) {
 
 		// Vertex Array
 		m_VertexArray.reset(Kingo::VertexArray::Create());
@@ -113,14 +113,12 @@ in vec3 v_Position;
 uniform vec3 u_Color;
 
 void main() {
-	// Color = vec4(v_Position * 0.5 + 0.5, 1.0);
 	//Color = vec4(0.2, 0.3, 0.8, 1.0);
 	Color = vec4(u_Color, 1.0);
 }
 		)";
 
-		m_FlatColorShader = Kingo::Shader::Create("FlatColor", vertexSrc, fragmentSrc);
-
+		m_FlatColorShader = Kingo::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
 		auto textureShader = m_ShaderLibrary.Load("Assets/Shaders/Texture.glsl");
 
@@ -133,34 +131,12 @@ void main() {
 	}
 
 	void OnUpdate(Kingo::Timestep ts) override {
-		if (Kingo::Input::IsKeyPressed(KE_KEY_LEFT)) {
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		}
-		else if (Kingo::Input::IsKeyPressed(KE_KEY_RIGHT)) {
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-		}
-
-		if (Kingo::Input::IsKeyPressed(KE_KEY_UP)) {
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		}
-		else if (Kingo::Input::IsKeyPressed(KE_KEY_DOWN)) {
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		}
-
-		if (Kingo::Input::IsKeyPressed(KE_KEY_A)) {
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		}
-		else if (Kingo::Input::IsKeyPressed(KE_KEY_D)) {
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		}
+		m_CameraController.OnUpdate(ts);
 
 		Kingo::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Kingo::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Kingo::Renderer::BeginScene(m_Camera);
+		Kingo::Renderer::BeginScene(m_CameraController.GetCamera());
 		{
 			static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -196,6 +172,7 @@ void main() {
 	}
 
 	void OnEvent(Kingo::Event& e) override {
+		m_CameraController.OnEvent(e);
 	}
 private:
 	Kingo::ShaderLibrary m_ShaderLibrary;
@@ -208,12 +185,7 @@ private:
 
 	Kingo::Ref<Kingo::Texture2D> m_Texture, m_KingoLogoTexture;
 
-	Kingo::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-
-	float m_CameraRotationSpeed = 180.0f;
-	float m_CameraRotation = 0.0f;
+	Kingo::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

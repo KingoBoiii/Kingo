@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Kingo\OrthographicCameraController.h" />
     <ClInclude Include="Sources\Kingo.h" />
     <ClInclude Include="Sources\Kingo\Application.h" />
     <ClInclude Include="Sources\Kingo\Core.h" />
@@ -586,6 +587,7 @@
     <ClInclude Include="Vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Kingo\OrthographicCameraController.cpp" />
     <ClCompile Include="Sources\Kingo\Application.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp" />

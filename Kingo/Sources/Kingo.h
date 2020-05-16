@@ -13,6 +13,7 @@
 #include "Kingo/Input.h"
 #include "Kingo/KeyCodes.h"
 #include "Kingo/MouseButtonCodes.h"
+#include "Kingo/OrthographicCameraController.h"
 
 #include "Kingo/ImGui/ImGuiLayer.h"
 
