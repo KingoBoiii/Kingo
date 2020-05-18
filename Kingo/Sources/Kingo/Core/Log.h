@@ -5,7 +5,7 @@
 
 namespace Kingo {
 
-	class KINGO_API Log {
+	class Log {
 	public:
 		static void Init();
 

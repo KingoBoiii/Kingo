@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Kingo/Window.h"
+#include "Kingo/Core/Window.h"
 #include "Kingo/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

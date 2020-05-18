@@ -1,6 +1,6 @@
 #pragma once
 #include "kepch.h"
-#include "Kingo/Core.h"
+#include "Kingo/Core/Core.h"
 
 namespace Kingo {
 
@@ -34,7 +34,7 @@ namespace Kingo {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class KINGO_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;

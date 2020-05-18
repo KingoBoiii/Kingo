@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Kingo/Core.h"
+#include "Kingo/Core/Core.h"
 
 namespace Kingo {
 	
-	class KINGO_API Input {
+	class Input {
 	public:
 		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
 

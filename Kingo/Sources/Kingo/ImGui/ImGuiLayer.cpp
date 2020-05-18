@@ -6,7 +6,7 @@
 #include <examples/imgui_impl_glfw.h>
 #include <examples/imgui_impl_opengl3.h>
 
-#include "Kingo/Application.h"
+#include "Kingo/Core/Application.h"
 
 //TEMP 
 #include <GLFW/glfw3.h>
@@ -17,6 +17,8 @@ namespace Kingo {
 	ImGuiLayer::ImGuiLayer() : Layer("ImGuiLayer") { }
 
 	void ImGuiLayer::OnAttach()	{
+		KE_PROFILE_FUNCTION();
+
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -48,22 +50,30 @@ namespace Kingo {
 	}
 
 	void ImGuiLayer::OnDetach()	{
+		KE_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
 
+	/*
 	void ImGuiLayer::OnImGuiRender() {
 		ImGui::ShowDemoWindow(new bool{ true });
 	}
+	*/
 
 	void ImGuiLayer::Begin() {
+		KE_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 	}
 
 	void ImGuiLayer::End() {
+		KE_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

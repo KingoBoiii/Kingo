@@ -140,33 +140,35 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Sources\Kingo\OrthographicCameraController.h" />
     <ClInclude Include="Sources\Kingo.h" />
-    <ClInclude Include="Sources\Kingo\Application.h" />
-    <ClInclude Include="Sources\Kingo\Core.h" />
+    <ClInclude Include="Sources\Kingo\Core\Application.h" />
+    <ClInclude Include="Sources\Kingo\Core\Core.h" />
+    <ClInclude Include="Sources\Kingo\Core\EntryPoint.h" />
+    <ClInclude Include="Sources\Kingo\Core\Input.h" />
+    <ClInclude Include="Sources\Kingo\Core\KeyCodes.h" />
+    <ClInclude Include="Sources\Kingo\Core\Layer.h" />
+    <ClInclude Include="Sources\Kingo\Core\LayerStack.h" />
+    <ClInclude Include="Sources\Kingo\Core\Log.h" />
+    <ClInclude Include="Sources\Kingo\Core\MouseButtonCodes.h" />
     <ClInclude Include="Sources\Kingo\Core\Timestep.h" />
-    <ClInclude Include="Sources\Kingo\EntryPoint.h" />
+    <ClInclude Include="Sources\Kingo\Core\Window.h" />
+    <ClInclude Include="Sources\Kingo\Debug\Instrumentor.h" />
     <ClInclude Include="Sources\Kingo\Events\ApplicationEvent.h" />
     <ClInclude Include="Sources\Kingo\Events\Event.h" />
     <ClInclude Include="Sources\Kingo\Events\KeyEvent.h" />
     <ClInclude Include="Sources\Kingo\Events\MouseEvent.h" />
     <ClInclude Include="Sources\Kingo\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="Sources\Kingo\Input.h" />
-    <ClInclude Include="Sources\Kingo\KeyCodes.h" />
-    <ClInclude Include="Sources\Kingo\Layer.h" />
-    <ClInclude Include="Sources\Kingo\LayerStack.h" />
-    <ClInclude Include="Sources\Kingo\Log.h" />
-    <ClInclude Include="Sources\Kingo\MouseButtonCodes.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Buffer.h" />
     <ClInclude Include="Sources\Kingo\Renderer\GraphicsContext.h" />
     <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Renderer.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\Renderer2D.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Texture.h" />
     <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h" />
-    <ClInclude Include="Sources\Kingo\Window.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -587,17 +589,18 @@
     <ClInclude Include="Vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Kingo\OrthographicCameraController.cpp" />
-    <ClCompile Include="Sources\Kingo\Application.cpp" />
+    <ClCompile Include="Sources\Kingo\Core\Application.cpp" />
+    <ClCompile Include="Sources\Kingo\Core\Layer.cpp" />
+    <ClCompile Include="Sources\Kingo\Core\LayerStack.cpp" />
+    <ClCompile Include="Sources\Kingo\Core\Log.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="Sources\Kingo\Layer.cpp" />
-    <ClCompile Include="Sources\Kingo\LayerStack.cpp" />
-    <ClCompile Include="Sources\Kingo\Log.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\Renderer2D.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Texture.cpp" />

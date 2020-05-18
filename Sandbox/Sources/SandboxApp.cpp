@@ -1,24 +1,27 @@
 #include <Kingo.h>
+#include <Kingo/Core/EntryPoint.h>
+
 #include "imgui/imgui.h"
-#include <glm/gtc/matrix_transform.hpp>
 
 #include "Platform/OpenGL/OpenGLShader.h"
+
+#include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+#include "Sandbox2D.h"
 
 class ExampleLayer : public Kingo::Layer {
 public:
 	ExampleLayer() : Layer("Example"), m_CameraController(1280.0f / 720.0f) {
-
 		// Vertex Array
-		m_VertexArray.reset(Kingo::VertexArray::Create());
+		m_VertexArray = Kingo::VertexArray::Create();
 		// Vertex Buffer
 		float vertices[3 * (3 + 4)] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
 			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
-		Kingo::Ref<Kingo::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Kingo::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Kingo::Ref<Kingo::VertexBuffer> vertexBuffer = Kingo::VertexBuffer::Create(vertices, sizeof(vertices));
 		Kingo::BufferLayout layout = {
 			{ Kingo::ShaderDataType::Float3, "a_Position" },
 			{ Kingo::ShaderDataType::Float4, "a_Color" }
@@ -28,11 +31,10 @@ public:
 
 		// Index Buffer
 		uint32_t indices[3] = { 0, 1, 2 };
-		Kingo::Ref<Kingo::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Kingo::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Kingo::Ref<Kingo::IndexBuffer> indexBuffer = Kingo::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Kingo::VertexArray::Create());
+		m_SquareVA = Kingo::VertexArray::Create();
 
 		float squareVertices[4 * (3 + 2)] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -40,8 +42,7 @@ public:
 			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f,
 		};
-		Kingo::Ref<Kingo::VertexBuffer> squareVB;
-		squareVB.reset(Kingo::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Kingo::Ref<Kingo::VertexBuffer> squareVB = Kingo::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ Kingo::ShaderDataType::Float3, "a_Position" },
@@ -50,8 +51,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[2 * 3] = { 0, 1, 2, 2, 3, 0 };
-		Kingo::Ref<Kingo::IndexBuffer> squareIB;
-		squareIB.reset(Kingo::IndexBuffer::Create(squareIndices, 6));
+		Kingo::Ref<Kingo::IndexBuffer> squareIB = Kingo::IndexBuffer::Create(squareIndices, 6);
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		// Shader
@@ -193,7 +193,8 @@ private:
 class Sandbox : public Kingo::Application {
 public:
 	Sandbox() { 
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 	~Sandbox() { }
 };

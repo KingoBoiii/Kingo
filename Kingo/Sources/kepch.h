@@ -14,7 +14,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Kingo/Log.h"
+#include "Kingo/Core/Log.h"
+
+#include "Kingo/Debug/Instrumentor.h"
 
 #ifdef KE_PLATFORM_WINDOWS
 	#include <Windows.h>

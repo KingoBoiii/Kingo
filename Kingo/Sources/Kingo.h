@@ -2,23 +2,24 @@
 
 // For use by Kingo Applications
 
-#include "Kingo/Core.h"
+#include "Kingo/Core/Core.h"
 
-#include "Kingo/Application.h"
-#include "Kingo/Layer.h"
-#include "Kingo/Log.h"
+#include "Kingo/Core/Application.h"
+#include "Kingo/Core/Layer.h"
+#include "Kingo/Core/Log.h"
 
 #include "Kingo/Core/Timestep.h"
 
-#include "Kingo/Input.h"
-#include "Kingo/KeyCodes.h"
-#include "Kingo/MouseButtonCodes.h"
-#include "Kingo/OrthographicCameraController.h"
+#include "Kingo/Core/Input.h"
+#include "Kingo/Core/KeyCodes.h"
+#include "Kingo/Core/MouseButtonCodes.h"
+#include "Kingo/Renderer/OrthographicCameraController.h"
 
 #include "Kingo/ImGui/ImGuiLayer.h"
 
 // --- Renderer ------------------------
 #include "Kingo/Renderer/Renderer.h"
+#include "Kingo/Renderer/Renderer2D.h"
 #include "Kingo/Renderer/RenderCommand.h"
 
 #include "Kingo/Renderer/Buffer.h"
@@ -30,5 +31,5 @@
 // --- Renderer ------------------------
 
 // --- Entry Point ---------------------
-#include "Kingo/EntryPoint.h"
+// #include "Kingo/Core/EntryPoint.h"
 // --- Entry Point ---------------------

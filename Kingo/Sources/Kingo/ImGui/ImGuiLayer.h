@@ -1,5 +1,5 @@
 #pragma once
-#include "Kingo/Layer.h"
+#include "Kingo/Core/Layer.h"
 
 #include "Kingo/Events/ApplicationEvent.h"
 #include "Kingo/Events/KeyEvent.h"
@@ -14,7 +14,7 @@ namespace Kingo {
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
-		virtual void OnImGuiRender() override;
+		// virtual void OnImGuiRender() override;
 
 		void Begin();
 		void End();

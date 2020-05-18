@@ -1,5 +1,5 @@
 #pragma once
-#include "Kingo/Input.h"
+#include "Kingo/Core/Input.h"
 
 namespace Kingo {
 

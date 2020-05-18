@@ -25,21 +25,31 @@ namespace Kingo {
 	}
 
 	OpenGLVertexArray::OpenGLVertexArray() { 
+		KE_PROFILE_FUNCTION();
+
 		glCreateVertexArrays(1, &m_RendererID);
 		// glBindVertexArray(m_RendererID);
 	}
 	OpenGLVertexArray::~OpenGLVertexArray() {
+		KE_PROFILE_FUNCTION();
+
 		glDeleteVertexArrays(1, &m_RendererID);
 	}
 
 	void OpenGLVertexArray::Bind() const { 
+		KE_PROFILE_FUNCTION();
+
 		glBindVertexArray(m_RendererID);
 	}
 	void OpenGLVertexArray::Unbind() const { 
+		KE_PROFILE_FUNCTION();
+
 		glBindVertexArray(0);
 	}
 
 	void OpenGLVertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer) { 
+		KE_PROFILE_FUNCTION();
+
 		KE_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no Layout!");
 
 		glBindVertexArray(m_RendererID);
@@ -62,6 +72,8 @@ namespace Kingo {
 		m_VertexBuffers.push_back(vertexBuffer);
 	}
 	void OpenGLVertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer) {
+		KE_PROFILE_FUNCTION();
+
 		glBindVertexArray(m_RendererID);
 		indexBuffer->Bind();
 

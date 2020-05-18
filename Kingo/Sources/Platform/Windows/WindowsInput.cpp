@@ -1,7 +1,7 @@
 #include "kepch.h"
 #include "WindowsInput.h"
 
-#include "Kingo/Application.h"
+#include "Kingo/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Kingo {

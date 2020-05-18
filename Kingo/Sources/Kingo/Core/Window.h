@@ -1,7 +1,7 @@
 #pragma once
 #include "kepch.h"
 
-#include "Kingo/Core.h"
+#include "Kingo/Core/Core.h"
 #include "Kingo/Events/Event.h"
 
 namespace Kingo {
@@ -15,7 +15,7 @@ namespace Kingo {
 			: Title(title), Width(width), Height(height) { }
 	};
 
-	class KINGO_API Window {
+	class Window {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 		virtual ~Window() { }
@@ -32,7 +32,7 @@ namespace Kingo {
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 
 }

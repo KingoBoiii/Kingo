@@ -57,17 +57,38 @@
     <ClInclude Include="Sources\Kingo.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Application.h">
-      <Filter>Sources\Kingo</Filter>
+    <ClInclude Include="Sources\Kingo\Core\Application.h">
+      <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Core.h">
-      <Filter>Sources\Kingo</Filter>
+    <ClInclude Include="Sources\Kingo\Core\Core.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\EntryPoint.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\Input.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\KeyCodes.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\Layer.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\LayerStack.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\Log.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Core\MouseButtonCodes.h">
+      <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Core\Timestep.h">
       <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\EntryPoint.h">
-      <Filter>Sources\Kingo</Filter>
+    <ClInclude Include="Sources\Kingo\Core\Window.h">
+      <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Events\ApplicationEvent.h">
       <Filter>Sources\Kingo\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="Sources\Kingo\ImGui\ImGuiLayer.h">
       <Filter>Sources\Kingo\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Input.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\KeyCodes.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\Layer.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\LayerStack.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\Log.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\MouseButtonCodes.h">
-      <Filter>Sources\Kingo</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\Buffer.h">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\OrthographicCamera.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\OrthographicCameraController.h">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h">
       <Filter>Sources\Kingo\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Kingo\Window.h">
-      <Filter>Sources\Kingo</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>Sources\Platform\OpenGL</Filter>
@@ -1386,11 +1389,21 @@
     <ClInclude Include="Vendor\stb_image\stb_image.h">
       <Filter>Vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\OrthographicCameraController.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\Renderer2D.h" />
+    <ClInclude Include="Sources\Kingo\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Kingo\Application.cpp">
-      <Filter>Sources\Kingo</Filter>
+    <ClCompile Include="Sources\Kingo\Core\Application.cpp">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Core\Layer.cpp">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Core\LayerStack.cpp">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Core\Log.cpp">
+      <Filter>Sources\Kingo\Core</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiBuild.cpp">
       <Filter>Sources\Kingo\ImGui</Filter>
@@ -1398,19 +1411,13 @@
     <ClCompile Include="Sources\Kingo\ImGui\ImGuiLayer.cpp">
       <Filter>Sources\Kingo\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Kingo\Layer.cpp">
-      <Filter>Sources\Kingo</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Kingo\LayerStack.cpp">
-      <Filter>Sources\Kingo</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Kingo\Log.cpp">
-      <Filter>Sources\Kingo</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Kingo\Renderer\Buffer.cpp">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Kingo\Renderer\OrthographicCamera.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\OrthographicCameraController.cpp">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Kingo\Renderer\RenderCommand.cpp">
@@ -1461,6 +1468,6 @@
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
       <Filter>Vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Kingo\OrthographicCameraController.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

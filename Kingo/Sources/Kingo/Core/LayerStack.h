@@ -1,12 +1,12 @@
 #pragma once
-#include "Kingo/Core.h"
+#include "Kingo/Core/Core.h"
 #include "Layer.h"
 
 #include <vector>
 
 namespace Kingo {
 
-	class KINGO_API LayerStack {
+	class LayerStack {
 	public:
 		LayerStack();
 		~LayerStack();
