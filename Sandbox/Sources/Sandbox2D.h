@@ -19,7 +19,10 @@ private:
 
 	Kingo::Ref<Kingo::VertexArray> m_SquareVA;
 	Kingo::Ref<Kingo::Shader> m_FlatColorShader;
+
 	Kingo::Ref<Kingo::Texture2D> m_Texture;
+	Kingo::Ref<Kingo::Texture2D> m_SpriteSheet;
+	Kingo::Ref<Kingo::SubTexture2D> m_TextureStairs, m_TextureBarrel, m_TextureTree;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 

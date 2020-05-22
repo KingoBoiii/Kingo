@@ -167,6 +167,7 @@
     <ClInclude Include="Sources\Kingo\Renderer\Renderer2D.h" />
     <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Shader.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\SubTexture2D.h" />
     <ClInclude Include="Sources\Kingo\Renderer\Texture.h" />
     <ClInclude Include="Sources\Kingo\Renderer\VertexArray.h" />
     <ClInclude Include="Sources\Platform\OpenGL\OpenGLBuffer.h" />
@@ -603,6 +604,7 @@
     <ClCompile Include="Sources\Kingo\Renderer\Renderer2D.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Shader.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\Texture.cpp" />
     <ClCompile Include="Sources\Kingo\Renderer\VertexArray.cpp" />
     <ClCompile Include="Sources\Platform\OpenGL\OpenGLBuffer.cpp" />

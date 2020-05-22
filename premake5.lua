@@ -17,9 +17,12 @@ IncludeDir["ImGui"] = "Kingo/Vendor/ImGui"
 IncludeDir["glm"] = "Kingo/Vendor/glm"
 IncludeDir["stb_image"] = "Kingo/Vendor/stb_image"
 
+group "Depedencies"
 include "Kingo/Vendor/GLFW"
 include "Kingo/Vendor/GLAD"
 include "Kingo/Vendor/ImGui"
+
+group ""
 
 project "Kingo"
     location "Kingo"

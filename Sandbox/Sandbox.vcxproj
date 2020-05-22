@@ -131,6 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\ParticleSystem.h" />
+    <ClInclude Include="Sources\Random.h" />
+    <ClInclude Include="Sources\Sandbox2D.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="Sources\ParticleSystem.cpp" />
     <ClCompile Include="Sources\Random.cpp" />
     <ClCompile Include="Sources\Sandbox2D.cpp" />
@@ -140,14 +145,6 @@
     <ProjectReference Include="..\Kingo\Kingo.vcxproj">
       <Project>{5DA3870D-C9B7-AFBE-9239-531EFE0CACEF}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Sources\ParticleSystem.h" />
-    <ClInclude Include="Sources\Random.h" />
-    <ClInclude Include="Sources\Sandbox2D.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Shaders\FlatColor.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

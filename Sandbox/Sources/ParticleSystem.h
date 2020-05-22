@@ -11,7 +11,7 @@ struct ParticleProps {
 
 class ParticleSystem {
 public:
-	ParticleSystem(uint32_t maxParticles = 100000);
+	ParticleSystem(uint32_t maxParticles = 50000);
 
 	void OnUpdate(Kingo::Timestep ts);
 	void OnRender(Kingo::OrthographicCamera& camera);

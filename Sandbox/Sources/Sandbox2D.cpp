@@ -10,12 +10,17 @@ void Sandbox2D::OnAttach() {
 	KE_PROFILE_FUNCTION();
 
 	m_Texture = Kingo::Texture2D::Create("Assets/Textures/Checkerboard.png");
+	m_SpriteSheet = Kingo::Texture2D::Create("Assets/Game/Textures/RPGpack_sheet_2X.png");
+
+	m_TextureStairs = Kingo::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 7, 6 }, { 128, 128 });
+	m_TextureBarrel = Kingo::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 8, 2 }, { 128, 128 });
+	m_TextureTree = Kingo::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 2, 1 }, { 128, 128 }, { 1, 2 });
 
 	// Init here
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
 	m_Particle.ColorEnd = { 254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f };
 	m_Particle.SizeBegin = 0.5f, m_Particle.SizeVariation = 0.3f, m_Particle.SizeEnd = 0.0f;
-	m_Particle.LifeTime = 5.0f;
+	m_Particle.LifeTime = 2.5f;
 	m_Particle.Velocity = { 0.0f, 0.0f };
 	m_Particle.VelocityVariation = { 3.0f, 1.0f };
 	m_Particle.Position = { 0.0f, 0.0f };
@@ -36,6 +41,7 @@ void Sandbox2D::OnUpdate(Kingo::Timestep ts) {
 		Kingo::RenderCommand::Clear();
 	}
 
+#if 0
 	{
 		static float rotation = 0.0f;
 		rotation += ts * 20.0f;
@@ -61,6 +67,7 @@ void Sandbox2D::OnUpdate(Kingo::Timestep ts) {
 		}
 		Kingo::Renderer2D::EndScene();
 	}
+#endif
 
 	if (Kingo::Input::IsMouseButtonPressed(KE_MOUSE_BUTTON_LEFT)) {
 		auto [x, y] = Kingo::Input::GetMousePosition();
@@ -78,6 +85,13 @@ void Sandbox2D::OnUpdate(Kingo::Timestep ts) {
 
 	m_ParticleSystem.OnUpdate(ts);
 	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
+
+	Kingo::Renderer2D::BeginScene(m_CameraController.GetCamera());
+	Kingo::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_TextureStairs);
+	Kingo::Renderer2D::DrawQuad({ 1.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_TextureBarrel);
+	Kingo::Renderer2D::DrawQuad({ -1.0f, 0.0f, 0.5f }, { 1.0f, 2.0f }, m_TextureTree);
+	Kingo::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.3f, 0.2f, 0.8f, 1.0f });
+	Kingo::Renderer2D::EndScene();
 }
 void Sandbox2D::OnImGuiRender() {
 	KE_PROFILE_FUNCTION();

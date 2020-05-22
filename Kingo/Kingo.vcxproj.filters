@@ -10,6 +10,9 @@
     <Filter Include="Sources\Kingo\Core">
       <UniqueIdentifier>{686094B3-5444-5509-BDA4-4F5CA9A73F8B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Kingo\Debug">
+      <UniqueIdentifier>{86C82C26-F229-0A34-7B97-50E6E7F740F3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Sources\Kingo\Events">
       <UniqueIdentifier>{F42B50EF-E0BA-D9B8-89D9-EDB37547EA5E}</UniqueIdentifier>
     </Filter>
@@ -90,6 +93,9 @@
     <ClInclude Include="Sources\Kingo\Core\Window.h">
       <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Kingo\Debug\Instrumentor.h">
+      <Filter>Sources\Kingo\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="Sources\Kingo\Events\ApplicationEvent.h">
       <Filter>Sources\Kingo\Events</Filter>
     </ClInclude>
@@ -121,6 +127,9 @@
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\Renderer.h">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Kingo\Renderer\Renderer2D.h">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\RendererAPI.h">
@@ -1389,8 +1398,7 @@
     <ClInclude Include="Vendor\stb_image\stb_image.h">
       <Filter>Vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Renderer\Renderer2D.h" />
-    <ClInclude Include="Sources\Kingo\Debug\Instrumentor.h" />
+    <ClInclude Include="Sources\Kingo\Renderer\SubTexture2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Core\Application.cpp">
@@ -1424,6 +1432,9 @@
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Kingo\Renderer\Renderer.cpp">
+      <Filter>Sources\Kingo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Kingo\Renderer\Renderer2D.cpp">
       <Filter>Sources\Kingo\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Kingo\Renderer\RendererAPI.cpp">
@@ -1468,6 +1479,6 @@
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
       <Filter>Vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Kingo\Renderer\Renderer2D.cpp" />
+    <ClCompile Include="Sources\Kingo\Renderer\SubTexture2D.cpp" />
   </ItemGroup>
 </Project>
