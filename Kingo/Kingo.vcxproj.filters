@@ -63,9 +63,6 @@
     <ClInclude Include="Sources\Kingo\Core\Application.h">
       <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Kingo\Core\Core.h">
-      <Filter>Sources\Kingo\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Kingo\Core\EntryPoint.h">
       <Filter>Sources\Kingo\Core</Filter>
     </ClInclude>
@@ -1399,6 +1396,9 @@
       <Filter>Vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Kingo\Renderer\SubTexture2D.h" />
+    <ClInclude Include="Sources\Kingo\Core\Base.h">
+      <Filter>Sources\Kingo\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Kingo\Core\Application.cpp">

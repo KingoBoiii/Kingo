@@ -1,5 +1,5 @@
 #pragma once
-#include "Kingo/Core/Core.h"
+#include "Kingo/Core/Base.h"
 #include "Kingo/Core/Timestep.h"
 #include "Kingo/Events/Event.h"
 

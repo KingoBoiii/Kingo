@@ -50,6 +50,10 @@ namespace Kingo {
 		overlay->OnAttach();
 	}
 
+	void Application::Close() {
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e) {
 		KE_PROFILE_FUNCTION();
 

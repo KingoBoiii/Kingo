@@ -142,7 +142,7 @@
   <ItemGroup>
     <ClInclude Include="Sources\Kingo.h" />
     <ClInclude Include="Sources\Kingo\Core\Application.h" />
-    <ClInclude Include="Sources\Kingo\Core\Core.h" />
+    <ClInclude Include="Sources\Kingo\Core\Base.h" />
     <ClInclude Include="Sources\Kingo\Core\EntryPoint.h" />
     <ClInclude Include="Sources\Kingo\Core\Input.h" />
     <ClInclude Include="Sources\Kingo\Core\KeyCodes.h" />

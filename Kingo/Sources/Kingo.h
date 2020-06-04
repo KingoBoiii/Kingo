@@ -2,7 +2,7 @@
 
 // For use by Kingo Applications
 
-#include "Kingo/Core/Core.h"
+#include "Kingo/Core/Base.h"
 
 #include "Kingo/Core/Application.h"
 #include "Kingo/Core/Layer.h"

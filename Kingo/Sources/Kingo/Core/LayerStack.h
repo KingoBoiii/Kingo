@@ -1,5 +1,5 @@
 #pragma once
-#include "Kingo/Core/Core.h"
+#include "Kingo/Core/Base.h"
 #include "Layer.h"
 
 #include <vector>

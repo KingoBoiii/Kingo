@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "Base.h"
 
 #include "Window.h"
 #include "Kingo/Core/LayerStack.h"
@@ -10,6 +10,8 @@
 
 #include "Kingo/ImGui/ImGuiLayer.h"
 
+int main(int argc, char** argv);
+
 namespace Kingo {
 
 	class Application {
@@ -17,16 +19,17 @@ namespace Kingo {
 		Application();
 		virtual ~Application();
 
-		void Run();
-
 		void OnEvent(Event& e);
 
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 
+		void Close();
+
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
 	private:
+		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
 	private:
@@ -39,6 +42,7 @@ namespace Kingo {
 		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
+		friend int ::main(int argc, char** argv);
 	};
 
 	// To be defined in clients

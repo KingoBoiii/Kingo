@@ -1,6 +1,6 @@
 #pragma once
 #include "kepch.h"
-#include "Kingo/Core/Core.h"
+#include "Kingo/Core/Base.h"
 
 namespace Kingo {
 

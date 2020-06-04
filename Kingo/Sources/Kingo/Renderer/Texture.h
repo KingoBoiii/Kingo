@@ -1,5 +1,5 @@
 #pragma once
-#include "Kingo/Core/Core.h"
+#include "Kingo/Core/Base.h"
 
 namespace Kingo {
 
@@ -9,6 +9,7 @@ namespace Kingo {
 
 		virtual uint32_t GetWidth() const = 0;
 		virtual uint32_t GetHeight() const = 0;
+		virtual uint32_t GetRendererID() const = 0;
 
 		virtual void SetData(void* data, uint32_t size) = 0;
 
